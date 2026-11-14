@@ -1,1 +1,1 @@
-# Multimodal_gas_detection
+# Multimodal Gas Detection
