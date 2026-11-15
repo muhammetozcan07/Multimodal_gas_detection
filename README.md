@@ -59,5 +59,13 @@ Multimodal_gas_detection/
 ├── Ozcan_YZM5110_Research.pdf           # Final research report
 └── README.md                            # Project documentation and reproduction instructions
 
- ## 5. Requirements
-The experiments were executed on Google Colab (CPU Runtime) using Python >= 3.10, tensorflow >= 2.15.0, scikit-learn >= 1.2.2, pandas, numpy, matplotlib, seaborn, and pillow.
+---
+
+## 5. How to Run & Reproduce
+
+### Requirements
+The experiments were executed on **Google Colab (CPU Runtime)** using `Python >= 3.10`, `tensorflow >= 2.15.0`, `scikit-learn >= 1.2.2`, `pandas`, `numpy`, `matplotlib`, `seaborn`, and `pillow`.
+
+To install dependencies locally:
+```bash
+pip install tensorflow scikit-learn pandas numpy matplotlib seaborn pillow
