@@ -64,11 +64,7 @@ This repository contains the official implementation, reproduction baseline, and
 Multimodal_gas_detection/
 │
 ├── Multimodal_Gas_Detection.ipynb       # Complete Google Colab notebook (Data loading, baselines, GMU, stress tests)
-├── Ozcan_YZM5110_Research.pdf           # Final research report (Deliverable)
-├── section4_experimental_results.csv    # Exported quantitative comparison table across clean/corrupted scenarios
-├── section4_improvement_analysis.png    # Dual-panel plot: Accuracy under corruption & Gate weight (z) boxplot
-├── baseline_early_fusion.keras          # Saved Keras model weights for Baseline Early Fusion
-├── proposed_gated_fusion.keras          # Saved Keras model weights for Proposed Gated Fusion (GMU)
+├── Ozcan_YZM5110_Research.pdf           # Final research report
 └── README.md                            # Project documentation and reproduction instructions
 
 
