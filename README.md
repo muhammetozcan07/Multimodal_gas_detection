@@ -3,7 +3,6 @@
 **Author:** Muhammet ÖZCAN (Student ID: 25434977001)  
 **Course:** YZM5110 - Multimodal Learning  
 **Institution:** Bursa Technical University, Graduate School  
-**Report File:** `Ozcan_YZM5110_Research.pdf`
 
 ---
 
