@@ -52,12 +52,14 @@ This repository contains the official implementation, reproduction baseline, and
 ---
 
 ## 4. Repository Structure
+
 ```text
 Multimodal_gas_detection/
 │
 ├── Multimodal_Gas_Detection.ipynb       # Complete Google Colab notebook (Data loading, baselines, GMU, stress tests)
 ├── Ozcan_YZM5110_Research.pdf           # Final research report
 └── README.md                            # Project documentation and reproduction instructions
+```
 
 ---
 
@@ -65,6 +67,30 @@ Multimodal_gas_detection/
 
 ### Requirements
 The experiments were executed on **Google Colab (CPU Runtime)** using `Python >= 3.10`, `tensorflow >= 2.15.0`, `scikit-learn >= 1.2.2`, `pandas`, `numpy`, `matplotlib`, `seaborn`, and `pillow`.
+
+To install dependencies locally:
+
+```bash
+pip install tensorflow scikit-learn pandas numpy matplotlib seaborn pillow
+```
+
+### Step-by-Step Execution in Google Colab
+1. Download the dataset archives (`NoGas.zip`, `Perfume.zip`, `Smoke.zip`, `Mixture.zip`) and `Gas_Sensors_Measurements.csv` from the original dataset source ([Mendeley Data](https://doi.org/10.3390/asi4010003)), and place them in your Google Drive directory: `/content/drive/MyDrive/MultimodalGasData/`.
+2. Open `Multimodal_Gas_Detection.ipynb` in Google Colab and run all cells sequentially:
+   * **Cells 1–2:** Mounts Google Drive, extracts the ZIP archives to `/content/extracted_images`, and deterministically maps image filenames to CSV sensor rows via the `Corresponding Image Name` column (6,400/6,400 exact match).
+   * **Cell 3:** Loads and rescales thermal images to `(128, 128, 3)`, performs a stratified split into Training (4,096), Validation (1,024), and Test (1,280) sets (`SEED = 42`), and applies `StandardScaler` to the 7 MQ sensor channels.
+   * **Cells 4–5:** Trains and evaluates the unimodal (`LSTM Only`, `CNN Only`) and baseline fusion (`Early Fusion`, `Max Fusion`, `Average Fusion`) models, generating the 5-panel confusion matrix.
+   * **Cells 6–8:** Trains the `Proposed Gated Fusion (GMU)` and `Ablation (Symmetric No-Gate)` models, runs the 4-scenario stress test, computes 1,000-iteration Bootstrap 95% confidence intervals, performs sample-level failure analysis, and exports all result tables and model weights.
+
+---
+
+## 6. References
+1. **Narkhede, P., Walambe, R., Mandaokar, S., Chandel, P., Kotecha, K., & Ghinea, G. (2021).** Gas detection and identification using multimodal artificial intelligence based sensor fusion. *Applied System Innovation*, 4(1), 3. [https://doi.org/10.3390/asi4010003](https://doi.org/10.3390/asi4010003)
+2. **Sharma, A., Khullar, V., Kansal, I., Chhabra, G., Arora, P., Popli, R., & Kumar, R. (2024).** Gas detection and classification using multimodal data based on federated learning. *Sensors*, 24(18), 5904.
+3. **Jadhav, P., Sairam, V. A., Bhojane, N., Singh, A., Gite, S., Pradhan, B., ... & Alamri, A. M. (2025).** Multimodal Gas Detection Using E-Nose and Thermal Images: An Approach Utilizing SRGAN and Sparse Autoencoder. *Comput. Mater. Continua*, 83(2), 3493-3517.
+4. **Zhang, E., & Zhang, E. (2025).** Gas pipeline leakage detection based on multiple multimodal deep feature selections and optimized deep forest classifier. *Frontiers in Environmental Science*, 13, 1569621.
+5. **Attallah, O. (2023).** Multitask Deep Learning-Based Pipeline for Gas Leakage Detection via E-Nose and Thermal Imaging Multimodal Fusion. *Chemosensors*, 11(7), 364.
+6. **Rahate, A., Mandaokar, S., Chandel, P., Walambe, R., Ramanna, S., & Kotecha, K. (2023).** Employing multimodal co-learning to evaluate the robustness of sensor fusion for industry 5.0 tasks. *Soft Computing*, 27(7), 4139-4155.
 
 To install dependencies locally:
 ```bash
