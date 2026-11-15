@@ -58,3 +58,6 @@ Multimodal_gas_detection/
 ├── Multimodal_Gas_Detection.ipynb       # Complete Google Colab notebook (Data loading, baselines, GMU, stress tests)
 ├── Ozcan_YZM5110_Research.pdf           # Final research report
 └── README.md                            # Project documentation and reproduction instructions
+
+ ## 5. Requirements
+The experiments were executed on Google Colab (CPU Runtime) using Python >= 3.10, tensorflow >= 2.15.0, scikit-learn >= 1.2.2, pandas, numpy, matplotlib, seaborn, and pillow.
